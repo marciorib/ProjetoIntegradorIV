@@ -1,0 +1,7 @@
+# Arquivos e pastas para ignorar
+__pycache__/
+*.pyc
+*.db
+.env
+venv/
+.idea/
