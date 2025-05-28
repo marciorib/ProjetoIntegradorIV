@@ -1,7 +1,7 @@
 # Arquivos e pastas para ignorar
+venv/
 __pycache__/
 *.pyc
-*.db
+instance/
 .env
-venv/
-.idea/
+*.db

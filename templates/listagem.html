@@ -1,8 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container mt-5 text-white">
-    <h2>Listagem</h2>
-    <p>Em breve: listagem de dados.</p>
+
+<div class="container mt-5">
+    <h2>Lista de Equipamentos</h2>
+
+    <!-- Botões de exportação -->
+    <div class="mb-3">
+        <a href="{{ url_for('exportar_excel') }}" class="btn btn-success me-2">Exportar para Excel</a>
+        <a href="{{ url_for('exportar_pdf') }}" class="btn btn-danger">Exportar para PDF</a>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Equipamento</th>
+                <th>PIB</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Gerência</th>
+                <th>Subgerência</th>
+                <th>Seção</th>
+                <th>Usuário</th>
+                <th>Conferente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for eq in equipamentos %}
+            <tr>
+                <td>{{ eq.equipamento }}</td>
+                <td>{{ eq.pib }}</td>
+                <td>{{ eq.descricao }}</td>
+                <td>{{ eq.data }}</td>
+                <td>{{ eq.gerencia }}</td>
+                <td>{{ eq.subgerencia }}</td>
+                <td>{{ eq.secao }}</td>
+                <td>{{ eq.nome_uso }} ({{ eq.matricula_uso }})</td>
+                <td>{{ eq.nome_conferente }} ({{ eq.matricula_conferente }})</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
+
 {% endblock %}
-/html>
