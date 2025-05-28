@@ -1,0 +1,18 @@
+<!--
+
+Evitar repetir código como navbar, scripts, CSS, imagem de fundo etc.
+
+Facilita muito a manutenção futura: muda o base.html, muda tudo de uma vez.
+
+Mantém o projeto integrador organizado e escalável.
+
+-->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 text-white text-center">
+    <h1 class="display-4">Bem-vindo ao Sistema</h1>
+    <p class="lead">Escolha uma das opções no menu acima</p>
+</div>
+{% endblock %}
+
