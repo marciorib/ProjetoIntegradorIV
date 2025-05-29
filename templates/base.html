@@ -8,45 +8,51 @@
 
     <style>
     /* Estilização dos campos */
-    input.form-control,
-    textarea.form-control {
-        background-color: rgba(255, 255, 255, 0.15);
-        color: #212529; /* Cor escura para melhor legibilidade */
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 10px;
-        backdrop-filter: blur(4px);
-    }
+input.form-control,
+textarea.form-control {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #f8f9fa; /* Texto mais claro */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    backdrop-filter: blur(4px);
+}
 
-    /* Foco no campo */
-    input.form-control:focus,
-    textarea.form-control:focus {
-        background-color: rgba(255, 255, 255, 0.25);
-        color: #212529; /* Também cor escura ao focar */
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
-    }
+/* Foco no campo */
+input.form-control:focus,
+textarea.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #f8f9fa;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
 
-    /* Placeholder mais claro */
-    ::placeholder {
-        color: #999;
-        opacity: 1;
-    }
+/* Placeholder mais claro */
+::placeholder {
+    color: #eee;  /* mais claro que #999 */
+    opacity: 1;
+}
 
-    /* Fundo opaco */
+    /* Fundo opaco com camada escura */
     .bg-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('{{ url_for('static', filename='img/correios1.webp') }}') center center / cover no-repeat;
-        opacity: 0.3;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('{{ url_for('static', filename='img/correios-Sede.webp') }}') center center / cover no-repeat;
         z-index: -1;
     }
-</style>
 
+    body, .conteudo {
+        color: #f8f9fa; /* Fonte clara para todo o conteúdo */
+    }
 
+    .navbar-custom {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    </style>
 </head>
 
 <body>
@@ -56,17 +62,17 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('index') }}">Sistema XYZ</a>
+            <a class="navbar-brand text-light" href="{{ url_for('index') }}">Sistema TRP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon text-light"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cadastro') }}">Cadastro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('leitura') }}">Leitura</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('impressao') }}">Impressão</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('listagem') }}">Listagem</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('baixa') }}">Baixar Equipamento</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url_for('cadastro') }}">Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url_for('leitura') }}">Leitura</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url_for('impressao') }}">Impressão</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url_for('listagem') }}">Listagem</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{{ url_for('baixa') }}">Baixar Equipamento</a></li>
                 </ul>
             </div>
         </div>
